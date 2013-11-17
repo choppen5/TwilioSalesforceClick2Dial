@@ -1,0 +1,51 @@
+<apex:page controller="TwilioClientController" showHeader="false" >
+
+ <script type="text/javascript" src="//static.twilio.com/libs/twiliojs/1.1/twilio.min.js"></script>
+ <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+ <script src="https://na15.salesforce.com/support/api/29.0/interaction.js"></script>
+ 
+ <script type="text/javascript">
+    Twilio.Device.setup("{! token }");
+
+      //OpenCTI!!
+      sforce.interaction.cti.enableClickToDial();
+      sforce.interaction.cti.onClickToDial(startCall);
+
+     function call() {
+        params = {"PhoneNumber": $("#number").val()};
+        Twilio.Device.connect(params);
+      }
+  
+      function hangup() {
+        Twilio.Device.disconnectAll();
+      }
+
+      function startCall(response) {
+            sforce.interaction.setVisible(true);  //pop up CTI console
+            var result = JSON.parse(response.result);  
+            var cleanednumber = cleanFormatting(result.number);             
+            params = {"PhoneNumber": cleanednumber};
+            Twilio.Device.connect(params);
+        }
+
+      function cleanFormatting(number) { 
+            //changes a SFDC formatted US number, which would be 415-555-1212  into a twilio understanble number 4155551212      
+            return number.replace(' ','').replace('-','').replace('(','').replace(')','').replace('+','');
+        }    
+    </script>
+
+    <div>
+      <input type="text" id="number" name="number"
+      placeholder="Enter a phone number to call"/>
+    </div>
+
+    <button class="call" onclick="call();">
+      Call
+    </button>
+  
+    <button class="hangup" onclick="hangup();">
+      Hangup
+    </button>
+
+  
+ </apex:page>

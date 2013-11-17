@@ -1,0 +1,7 @@
+<apex:page controller="TwilioClientController"
+  showheader="false"
+  contentType="text/xml"
+  >{! '<?xml version=\"1.0\" encoding=\"UTF-8\"?>' }
+{!Dial}
+</apex:page>
+                
