@@ -1,6 +1,6 @@
 # Setup
 
-Install: <https://login.salesforce.com/packaging/installPackage.apexp?p0=04ti0000000TMRk0>
+Install: <https://na15.salesforce.com/packaging/installPackage.apexp?p0=04ti0000000TMRk>
 
 If you have an environment that **does not** already have the TwilioSalesforce library installed, you can run the package install. 
 
