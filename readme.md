@@ -12,6 +12,7 @@ This package contains
 * VisualForce pages
   - ClickToDial.vf
   - Dial.vf
+  - Respond.vf
 * CallCenter definition file
 * Develop > Custom Settings > Twilio Config (AccountSid, ApplicationSid, AuthToken, CallerId)
 
@@ -49,14 +50,16 @@ After setup, you need to do the following steps
 ***Setting up a VisualForce Site***
 
 7. Go to SalesForce Setup -> Develop -> Sites 
-8. Create a new Site or use make sure **Dial** visual Force page is included
- or modify an existing site to include TwilioClick2Dial and "Dial"" VisualForce. For example, if you created a new site in a Developer org , the url to Dial might be this: 
+8. Create a new Site or use make sure **Dial** and **Respond** Visual Force pages are included
+ or modify an existing site to include **TwilioClick2Dial**, **Dial**, and **Respond** VisualForce Pages. For example, if you created a new site in a Developer org , the url to Dial might be this: 
  http://twilioctidemo-developer-edition.na15.force.com/dial
 
 ***Back in Twilio***
 
-1. After your Force.com Site is created, you can add it to the TWIML app created.  Navigate to Dev Tools > Twiml Apps > "SalesforceClick2Dial"
+1. After your Force.com Site is created, you can point your TWIML app at it.  Navigate to Dev Tools > Twiml Apps > "SalesforceClick2Dial"
 2. Set the Request URL to your Site address, for example: http://twilioctidemo-developer-edition.na15.force.com/dial
+3. To route Incoming Calls to one or more of your Twilio Phone Numbers into your Salesforce Call Center Softphone, go to your Twilio Phone Number, and set the "Voice Request Url"  to be `<YourSiteBaseUrl>/respond`, e.g. http://twilioctidemo-developer-edition.na15.force.com/respond
+
 
 
 ***Done!***

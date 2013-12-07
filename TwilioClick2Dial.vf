@@ -19,6 +19,13 @@
       function hangup() {
         Twilio.Device.disconnectAll();
       }
+      
+      // Handle incoming calls from Twilio
+     Twilio.Device.incoming(function (conn) {
+        if (confirm('Accept incoming call from ' + conn.parameters.From + '?')){
+            conn.accept();
+        }
+     });      
 
       function startCall(response) {
             sforce.interaction.setVisible(true);  //pop up CTI console
