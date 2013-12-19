@@ -17,7 +17,7 @@ This package contains
 * Develop > Custom Settings > Twilio Config (AccountSid, ApplicationSid, AuthToken, CallerId)
 
 
-To install this in your Salesforce environment, just select theh link above, confrim the defaults, and it will be installed in the Salesforce Environment you log into.  You need Salesforce Admin privelages to install.  
+To install this in your Salesforce environment, just select the link above, confrim the defaults, and it will be installed in the Salesforce Environment you log into.  You need Salesforce Admin privileges to install.  
 
 
 ## Configuration - after package Install
@@ -28,8 +28,20 @@ After setup, you need to do the following steps
 
 
 1. Create a Twilio.com account if you don't have one, obtain your AuthToken and Secret.
-2. In Twilio, go to Dev Tools > Twimil  Apps > Create. Give the name of the App SalesforceClick2Dial,  note the ApplicationSid
-3. "Buy"" at least one phone number in Twilio, you will need at least one phone number for CallerId, note the phone number. 
+![TwimlApp](http://uploadir.com/u/ecsgu7jl)
+
+
+2. In Twilio, go to Dev Tools > Twimil  Apps > Create. Give the name of the App SalesforceClick2Dial,  note the ApplicationSid.  
+![TwilioAuthToken](http://uploadir.com/u/vfv1enbb)
+
+3. We will later go into this Application, and add a Voice URL to it, once we create the URL in Salesforce in later steps. For now, note the Application Id created
+![TwimlAppWithoutURL](http://uploadir.com/u/u7lpiwhv)
+
+
+4. "Buy"" at least one phone number in Twilio, you will need at least one phone number for CallerId, note the phone number.  We can also modify the VoiceURL to include a Salesforce URL, to allow inbound routing to this number as well as outbound click2dial.
+
+![BuyphoneNumber](http://uploadir.com/u/5mu93v1n)
+
 
 ***In Salesforce***
 
