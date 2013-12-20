@@ -1,3 +1,15 @@
+##How to get Click to Dial working in Salesforce with Twilio##
+
+This is a step by step guide to get click2 dial and basic inbound routing working in Salesforce OpenCTI by using Twilio.
+
+Why would you want to do this? This app should appeal to you if you want the simplest, lowest overhead solution to getting calls going out of Salesforce when you click on a call. It doesn't require any vendors (except Salesforce account and a Twilio account) or software - instead of evaluating all the myriad of call center solutions that you can buy for Salesforce, you are using your time and customization skills to connect you Salesforce Instance right to Twilio.
+
+Because both Twilio and Salesforce speak the language of the web, you can get this going by following the steps in this blog, and be making calls right out of your browser, instead of being dependent on phones. 
+
+Another advantage is that since you implement all the code your self, you have full control - you can take this code as a starting point and build upon it, or just use the basic version.
+
+Check out a video presentation, or jump into the setup steps below: https://www.youtube.com/watch?v=RFJcNOCqVuU
+
 # Setup
 
 Install: <https://na15.salesforce.com/packaging/installPackage.apexp?p0=04ti0000000TMRk>
@@ -48,8 +60,9 @@ After setup, you need to do the following steps
 1. Go to Develop > Custom Settings > TwilioConfig.  Press the "Manage"" link then > "New"" to set new variables
 ![config](http://uploadir.com/u/n6p22ssu)
 ![new](http://uploadir.com/u/ln6wpcbm) 
+
 Add the (AccountSid, AuthToken, ApplicationSid, CallerId) parameters created from the Twilio steps 
-![newconfig](http://uploadir.com/u/gfofpi7v)
+![newconfig](http://uploadir.com/u/q7eppa04)
 
 
 ##Setting up a VisualForce Site##
