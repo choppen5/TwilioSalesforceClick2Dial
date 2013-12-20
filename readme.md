@@ -19,6 +19,9 @@ This package contains
 
 To install this in your Salesforce environment, just select the link above, confrim the defaults, and it will be installed in the Salesforce Environment you log into.  You need Salesforce Admin privileges to install.  
 
+![sfdcinstall](http://uploadir.com/u/gghpenq7)
+
+
 
 ## Configuration - after package Install
 
@@ -39,19 +42,22 @@ After setup, you need to do the following steps
 
 
 4. "Buy"" at least one phone number in Twilio, you will need at least one phone number for CallerId, note the phone number.  We can also modify the VoiceURL to include a Salesforce URL, to allow inbound routing to this number as well as outbound click2dial.
-
 ![BuyphoneNumber](http://uploadir.com/u/5mu93v1n)
 
 
 ***In Salesforce***
 
 
-1.  Go to Develop > Custom Settings > TwilioConfig.  Press the "Manage"" link, then > "New"" to set new variables
+1. Go to Develop > Custom Settings > TwilioConfig.  Press the "Manage"" link then > "New"" to set new variables
+![config](http://uploadir.com/u/n6p22ssu)
+![new](http://uploadir.com/u/ln6wpcbm) 
+Add the (AccountSid, AuthToken, ApplicationSid, CallerId) parameters created from the Twilio steps 
+![newconfig](http://uploadir.com/u/gfofpi7v)
 
-2.  Add the (AccountSid, AuthToken, ApplicationSid, CallerId) parameters created from the Twilio steps
 
-3.  Locate the VisualForce pages that were imported from the package (From Develop > Pages)
+2. Locate the VisualForce pages that were imported from the package (From Develop > Pages)
 *TwilioClick2Dial*
+
 
 4.  Click on the visual force page to find the VisualForce instance full path.  For example: https://c.na15.visual.force.com/apex/TwilioClick2Dial - The Salesforce instance address will vary depending on you specific Salesforce login.
 
