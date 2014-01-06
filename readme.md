@@ -4,7 +4,7 @@ This is a step by step guide to get click2 dial and basic inbound routing workin
 
 Why would you want to do this? This app should appeal to you if you want the simplest, lowest overhead solution to getting calls going out of Salesforce to call a user. It doesn't require any vendors (except Salesforce account and a Twilio account) or software - it lives in the browser. 
 
-Because both Twilio and Salesforce speak the language of the web, you can get this going by following the steps in this blog, and be making calls right out of your browser, instead of being dependent on phones. 
+Because both Twilio and Salesforce speak the language of the web, you can get this going by following the steps in this article, and be making calls right out of your browser, instead of being dependent on phones. 
 
 Another advantage is that since you implement all the code your self, you have full control - you can take this code as a starting point and build upon it, or just use the basic version.
 
@@ -12,7 +12,7 @@ Check out a video presentation, or jump into the setup steps below: https://www.
 
 # Setup
 
-Install: <https://na15.salesforce.com/packaging/installPackage.apexp?p0=04ti0000000TMRk>
+Twilio SFDC library install: <https://na15.salesforce.com/packaging/installPackage.apexp?p0=04ti0000000TMRk>
 
 If you have an environment that **does not** already have the TwilioSalesforce library installed, you can run the package install. 
 
