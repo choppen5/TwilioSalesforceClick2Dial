@@ -130,8 +130,20 @@ You also have to make sure the /respond page is included in your security settin
 
 ## Non package install:
 
-If you have TwilioSalesforce library already installed, it will error.  In that case:
-- Create a new ApexClass "TwilioClientController"
-- Create  VisualForce page
-- Download the CallCenter CAllCenter definitions specific to 
+Installing this package into Salesforce org can cause some issues.  It does work with a brand new Developer org, but if you have installed the Twilio-Salesforce adapter, or have VisualForce sites set up, you can run into conflicts.
+
+1. You can install the TwilioSFDC package directly here: https://github.com/twilio/twilio-salesforce. There is a package installer, or you can use ANT if you have it installed.\
+
+ Once you have Twilio SFDC installed in your org, you can do these steps:
+1. Download and create the APEX class TwilioCientController https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/TwilioClientController.apex
+2. Download and create the VisualForce page: https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/TwilioClick2Dial.vf
+3. Download and create the Dial page: https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/Dial.vf
+4. Create a new Custom Setting in Develop > Custom Settings > Twilio Config - the CallerId setting might be missing, create that if so.
+
+
+After that, all the setup instructions above apply - you have to set the Autentication tokens, caller id, Twilio steps etc.
+
+ 
+
+
 
