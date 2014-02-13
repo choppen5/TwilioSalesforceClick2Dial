@@ -132,13 +132,14 @@ You also have to make sure the /respond page is included in your security settin
 
 Installing this package into Salesforce org can cause some issues.  It does work with a brand new Developer org, but if you have installed the Twilio-Salesforce adapter, or have VisualForce sites set up, you can run into conflicts.
 
-1. You can install the TwilioSFDC package directly here: https://github.com/twilio/twilio-salesforce. There is a package installer, or you can use ANT if you have it installed.\
+1. You can install the TwilioSFDC package directly here: https://github.com/twilio/twilio-salesforce. There is a package installer, or you can use ANT if you have it installed.
 
  Once you have Twilio SFDC installed in your org, you can do these steps:
-1. Download and create the APEX class TwilioCientController https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/TwilioClientController.apex
-2. Download and create the VisualForce page: https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/TwilioClick2Dial.vf
-3. Download and create the Dial page: https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/Dial.vf
-4. Create a new Custom Setting in Develop > Custom Settings > Twilio Config - the CallerId setting might be missing, create that if so.
+2. Create a new Custom Setting in Develop > Custom Settings > Twilio Config - the CallerId setting might be missing, create that if so.  You will add a Twilio phone number in the callerid field in the steps above. 
+
+3. Download and create the APEX class TwilioCientController https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/TwilioClientController.apex
+4. Download and create the VisualForce page: https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/TwilioClick2Dial.vf
+5. Download and create the Dial page: https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/Dial.vf
 
 
 After that, all the setup instructions above apply - you have to set the Autentication tokens, caller id, Twilio steps etc.
