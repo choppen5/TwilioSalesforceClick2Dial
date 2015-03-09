@@ -1,8 +1,8 @@
 <apex:page controller="TwilioClientController" showHeader="false" >
 
- <script type="text/javascript" src="//static.twilio.com/libs/twiliojs/1.1/twilio.min.js"></script>
- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
- <script src="https://na15.salesforce.com/support/api/29.0/interaction.js"></script>
+ <script type="text/javascript" src="//static.twilio.com/libs/twiliojs/1.2/twilio.min.js"></script>
+ <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+ <script src="https://na15.salesforce.com/support/api/33.0/interaction.js"></script>
  
  <script type="text/javascript">
     Twilio.Device.setup("{! token }");
