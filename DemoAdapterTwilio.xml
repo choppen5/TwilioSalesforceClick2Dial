@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <callCenter>
   <section sortOrder="0" name="reqGeneralInfo" label="General Information">
-    <item sortOrder="0" name="reqInternalName" label="InternalName">TwilioAddapter</item>
+    <item sortOrder="0" name="reqInternalName" label="InternalName">TwilioAdapter</item>
     <item sortOrder="1" name="reqDisplayName" label="Display Name">Twilio Click2 Call</item>
-    <item sortOrder="2" name="reqAdapterUrl" label="CTI Adapter URL">https://c.na15.visual.force.com/apex/TwilioClick2Dial</item>
+    <item sortOrder="2" name="reqAdapterUrl" label="CTI Adapter URL">/apex/TwilioClick2Dial</item>
     <item sortOrder="3" name="reqUseApi" label="Use CTI API">true</item>
     <item sortOrder="4" name="reqSoftphoneHeight" label="Softphone Height">400</item>
     <item sortOrder="5" name="reqSoftphoneWidth" label="Softphone Width">300</item>

@@ -12,10 +12,11 @@ Check out a video presentation, or jump into the setup steps below: https://www.
 
 # Setup
 
-Twilio SFDC library install: <https://na15.salesforce.com/packaging/installPackage.apexp?p0=04ti0000000TMRk>
-
 If you have an environment that **does not** already have the TwilioSalesforce library installed, you can run the package install. 
 
+Twilio SFDC library install: <https://na15.salesforce.com/packaging/installPackage.apexp?p0=04ti0000000TMRk>
+
+If the TwilioSalesforce library is already installed or if the above package fails to install please refer to <a href="#non-package-install">Non Package Install</a>.
 
 This package contains
 
@@ -43,7 +44,6 @@ After setup, you need to do the following steps
 
 1. Create a Twilio.com account if you don't have one, obtain your AuthToken and Secret.
 ![TwimlApp](http://uploadir.com/u/ecsgu7jl)
-
 
 2. In Twilio, go to Dev Tools > Twimil  Apps > Create. Give the name of the App SalesforceClick2Dial,  note the ApplicationSid.  
 ![TwilioAuthToken](http://uploadir.com/u/vfv1enbb)
@@ -96,25 +96,27 @@ For example, if you created a new site in a Developer org , the url to Dial migh
 
 ###Setting up Salesforce Call Center###
 
-2. Locate the VisualForce pages that supports the softphone that was imported from the package (From Develop > Pages) *TwilioClick2Dial*
+Addendum to steps 1-3: The Call Center > CTI Adapter URL can simply be set to "/apex/TwilioClick2Dial", DemoAdapterTwilio.xml has been updated accordingly.
+
+1. Locate the VisualForce pages that supports the softphone that was imported from the package (From Develop > Pages) *TwilioClick2Dial*
 Make sure to click on the preview page, not just the source code
 ![PreviewVF](http://uploadir.com/u/mtginq7w)
 
-
-3.  Click on the visual force page to find the VisualForce instance full path.  For example: https://c.na15.visual.force.com/apex/TwilioClick2Dial - The Salesforce instance address will vary depending on your specific Salesforce login.
+2.  Click on the visual force page to find the VisualForce instance full path.  For example: https://c.na15.visual.force.com/apex/TwilioClick2Dial - The Salesforce instance address will vary depending on your specific Salesforce login.
 ![apexaddress](http://uploadir.com/u/cx6axmqc)
 
-4. Add this VisualForce page to you CallCenter configuration.  Navigate to Setup > Create > Call Centers > Click2Dial call center.  Edit the call center, and set the CTI Adapter URL to the visual force page address from the previous step.
+3. Add this VisualForce page to you CallCenter configuration.  Navigate to Setup > Create > Call Centers > Click2Dial call center.  Edit the call center, and set the CTI Adapter URL to the visual force page address from the previous step.
 ![callcenterurl](http://uploadir.com/u/lyhysp3e)
 
 
-5. Press the Manage Users button in the Call Center, add your user to this Call Center.  This is the last step!  Now, when you navigate to a CTI compatible view in Salesforce, it will enable showing the Open CTI toolbar.  Since the demo click2call code has no styling,  the view is very basic. 
+4. Press the Manage Users button in the Call Center, add your user to this Call Center.  This is the last step!  Now, when you navigate to a CTI compatible view in Salesforce, it will enable showing the Open CTI toolbar.  Since the demo click2call code has no styling,  the view is very basic. 
 ![openctienabled](http://uploadir.com/u/do78g14m)
 
 You will know everything is setup correctly if you can:
-- See the Open CTI toolbar
+- See the Open CTI toolbar (If the toolbar fails to render, check that your browser is not blocking 3rd party cookies, or add an exception to allow cookies from the frame source e.g.  **c.**your salesforce domain**.visual.force.com**)
 - See that phone numbers are clickable
 - When clicking a number, or entering a number to call, the call should be connected
+- Addendum March 2015: works most reliably using Chrome browser
 
 
 ***Done!***
@@ -138,13 +140,14 @@ Installing this package into Salesforce org can cause some issues.  It does work
 2. Create a new Custom Setting in Develop > Custom Settings > Twilio Config - the CallerId setting might be missing, create that if so.  You will add a Twilio phone number in the callerid field in the steps above. 
 
 3. Download and create the APEX class TwilioCientController https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/TwilioClientController.apex
+
 4. Download and create the VisualForce page: https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/TwilioClick2Dial.vf
+
 5. Download and create the Dial page: https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/Dial.vf
+
+6. Download and create the Respond page: https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/Respond.vf
+
+7. Create a new Call Center in Customize > Call Center > Call Centers by Import(ing) https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/DemoAdapterTwilio.xml
 
 
 After that, all the setup instructions above apply - you have to set the Autentication tokens, caller id, Twilio steps etc.
-
- 
-
-
-
