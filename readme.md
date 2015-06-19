@@ -12,28 +12,24 @@ Check out a video presentation, or jump into the setup steps below: https://www.
 
 # Setup
 
-If you have an environment that **does not** already have the TwilioSalesforce library installed, you can run the package install. 
 
-Twilio SFDC library install: <https://na15.salesforce.com/packaging/installPackage.apexp?p0=04ti0000000TMRk>
+1. You need the Twilio-SFDC package installed in your environennt. If you don't have it, you can find it here: https://github.com/twilio/twilio-salesforce. 
 
-If the TwilioSalesforce library is already installed or if the above package fails to install please refer to <a href="#non-package-install">Non Package Install</a>.
+ Once you have Twilio SFDC installed in your org, you can do these steps:
+2. Create a new Custom Setting in Develop > Custom Settings > Twilio Config - the CallerId setting might be missing, create that if so.  You will add a Twilio phone number in the callerid field in the steps above. 
 
-This package contains
+3. Download and create the APEX class TwilioCientController https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/TwilioClientController.apex
 
-* All of the TwilioSalesforce library
-* Apex Class "TwilioClientController"
-* VisualForce pages
-  - ClickToDial.vf
-  - Dial.vf
-  - Respond.vf
-* CallCenter definition file
-* Develop > Custom Settings > Twilio Config (AccountSid, ApplicationSid, AuthToken, CallerId)
+4. Download and create the VisualForce page: https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/TwilioClick2Dial.vf
+
+5. Download and create the Dial page: https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/Dial.vf
+
+6. Download and create the Respond page: https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/Respond.vf
+
+7. Create a new Call Center in Customize > Call Center > Call Centers by Import(ing) https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/DemoAdapterTwilio.xml
 
 
-To install this in your Salesforce environment, just select the link above, confrim the defaults, and it will be installed in the Salesforce Environment you log into.  You need Salesforce Admin privileges to install.  
-
-![sfdcinstall](http://uploadir.com/u/gghpenq7)
-
+After that, all the setup instructions below apply - you have to set the Autentication tokens, caller id, Twilio steps etc.
 
 
 ## Configuration - after package Install
@@ -130,24 +126,4 @@ To route Incoming Calls to one or more of your Twilio Phone Numbers into your Sa
 You also have to make sure the /respond page is included in your security settings as we did for the /dial page.  The respond page has very simple routing.. it will just route the call to the first availible agent.
 
 
-## Non package install:
 
-Installing this package into Salesforce org can cause some issues.  It does work with a brand new Developer org, but if you have installed the Twilio-Salesforce adapter, or have VisualForce sites set up, you can run into conflicts.
-
-1. You can install the TwilioSFDC package directly here: https://github.com/twilio/twilio-salesforce. There is a package installer, or you can use ANT if you have it installed.
-
- Once you have Twilio SFDC installed in your org, you can do these steps:
-2. Create a new Custom Setting in Develop > Custom Settings > Twilio Config - the CallerId setting might be missing, create that if so.  You will add a Twilio phone number in the callerid field in the steps above. 
-
-3. Download and create the APEX class TwilioCientController https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/TwilioClientController.apex
-
-4. Download and create the VisualForce page: https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/TwilioClick2Dial.vf
-
-5. Download and create the Dial page: https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/Dial.vf
-
-6. Download and create the Respond page: https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/Respond.vf
-
-7. Create a new Call Center in Customize > Call Center > Call Centers by Import(ing) https://github.com/choppen5/TwilioSalesforceClick2Dial/blob/master/DemoAdapterTwilio.xml
-
-
-After that, all the setup instructions above apply - you have to set the Autentication tokens, caller id, Twilio steps etc.
